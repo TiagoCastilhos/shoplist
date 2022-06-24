@@ -1,2 +1,4 @@
-package com.example.shoplist;public class ProductAdapter {
+package com.example.shoplist;
+
+public class ProductAdapter {
 }

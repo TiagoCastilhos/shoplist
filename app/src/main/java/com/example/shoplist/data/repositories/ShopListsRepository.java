@@ -49,6 +49,6 @@ public class ShopListsRepository {
     }
 
     public ArrayList<Product> getProducts(int shopListId) {
-
+        return null;
     }
 }
