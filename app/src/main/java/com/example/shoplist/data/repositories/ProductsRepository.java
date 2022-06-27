@@ -36,4 +36,8 @@ public class ProductsRepository {
 
         return result;
     }
+
+    public void addProducts() {
+
+    }
 }

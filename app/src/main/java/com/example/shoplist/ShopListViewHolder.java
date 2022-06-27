@@ -9,12 +9,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.shoplist.models.ShopList;
 
 public class ShopListViewHolder extends RecyclerView.ViewHolder {
-    public ShopListViewHolder(@NonNull View itemView, ShopList shopList) {
-        super(itemView);
-        TextView idView = itemView.findViewById(R.id.shopListIdView);
-        idView.setText(shopList.getId());
+    private TextView idView;
+    private TextView nameView;
 
-        TextView nameView = itemView.findViewById(R.id.shopListNameView);
+    public ShopListViewHolder(@NonNull View itemView) {
+        super(itemView);
+        this.idView = itemView.findViewById(R.id.shopListIdView);
+        this.nameView = itemView.findViewById(R.id.shopListNameView);
+    }
+
+    public void setData(ShopList shopList) {
+        idView.setText(Integer.toString(shopList.getId()));
         nameView.setText(shopList.getDescription());
     }
 }
