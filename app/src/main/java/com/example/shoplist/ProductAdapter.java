@@ -12,12 +12,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.shoplist.models.Product;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
     private ArrayList<Product> products;
+    private HashMap<Integer, Boolean> map;
 
     public ProductAdapter(ArrayList<Product> products) {
         this.products = products;
+        this.map = new HashMap<Integer, Boolean>();
+    }
+
+    public HashMap<Integer, Boolean> getHashMap() {
+        return this.map;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -33,7 +41,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        holder.setData(this.products.get(position));
+        holder.setData(this.products.get(position), this.map);
     }
 
     @Override
